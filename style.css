@@ -1,0 +1,31 @@
+:root {
+	--bg-dark: rgb(44, 44, 44);
+	--bg-black: rgb(0, 0, 0);
+
+	--background: var(--bg-dark);
+}
+
+body {
+	background: var(--background);
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	font-size: 8vh;
+
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#time {
+	font-size: 12vh;
+}
+
+#date {
+	color: rgb(141, 141, 141);
+	position: absolute;
+	top: 0.5vh;
+	left: 0.5vh;
+}
