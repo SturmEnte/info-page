@@ -54,3 +54,15 @@ setInterval(() => {
 
 	timeElem.innerHTML = hour + ":" + min + ":" + sec;
 });
+
+let black = false;
+
+timeElem.onclick = () => {
+	if (black) {
+		document.documentElement.style.setProperty("--background", "var(--bg-dark)");
+	} else {
+		document.documentElement.style.setProperty("--background", "var(--bg-black)");
+	}
+
+	black = !black;
+};
