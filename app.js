@@ -11,31 +11,10 @@ const day = [
 const dateElem = document.getElementById("date");
 const timeElem = document.getElementById("time");
 
-let date = new Date();
-
-let dateNum = date.getDate();
-let monthNum = date.getMonth() + 1;
-
-if (dateNum < 10) {
-	dateNum = "0" + dateNum;
-}
-
-if (monthNum < 10) {
-	monthNum = "0" + monthNum;
-}
-
-dateElem.innerHTML =
-	day[date.getDay() - 1] +
-	"  " +
-	dateNum +
-	"." +
-	monthNum +
-	"." +
-	date.getFullYear();
-
 setInterval(() => {
-	date = new Date();
+	const date = new Date();
 
+	// Update time
 	let hour = date.getHours();
 	let min = date.getMinutes();
 	let sec = date.getSeconds();
@@ -53,6 +32,27 @@ setInterval(() => {
 	}
 
 	timeElem.innerHTML = hour + ":" + min + ":" + sec;
+
+	// Update date
+	let dateNum = date.getDate();
+	let monthNum = date.getMonth() + 1;
+
+	if (dateNum < 10) {
+		dateNum = "0" + dateNum;
+	}
+
+	if (monthNum < 10) {
+		monthNum = "0" + monthNum;
+	}
+
+	dateElem.innerHTML =
+		day[date.getDay() - 1] +
+		"  " +
+		dateNum +
+		"." +
+		monthNum +
+		"." +
+		date.getFullYear();
 });
 
 let black = false;
